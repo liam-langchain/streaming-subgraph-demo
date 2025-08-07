@@ -1,0 +1,34 @@
+# Environments
+.env
+*.env
+.venv/
+venv/
+
+# Claude config
+.claude
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.python-version
+pip-wheel-metadata/
+*.egg-info/
+dist/
+build/
+
+# Editors/OS
+.DS_Store
+.idea/
+.vscode/
+
+# Tests/Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
