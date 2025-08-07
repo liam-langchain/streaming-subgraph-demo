@@ -1,5 +1,5 @@
 """
-The EXACT fix from GitHub issue #5249 for Mallesh's streaming problem
+The EXACT fix from GitHub issue #5249 for streaming problem
 This shows the precise pattern from the LangGraph maintainer's comment
     FIX:
     1. Upgrade to LangGraph >= 0.6.4
@@ -33,7 +33,7 @@ if os.getenv("OPENAI_API_KEY"):
 class AgentState(TypedDict):
     messages: List[BaseMessage]
 
-# BROKEN: Mallesh's current code 
+# BROKEN:current code 
 def find_node_broken(state: AgentState, config: RunnableConfig) -> Dict[str, List[BaseMessage]]:
     """This broke after LangGraph change #4843"""
     llm = ChatOpenAI(model="gpt-4o-mini", streaming=True, temperature=0)
