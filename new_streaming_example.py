@@ -76,25 +76,7 @@ def find_node_fixed(state: AgentState, config: RunnableConfig) -> Dict[str, List
     return {"messages": [AIMessage(content="No response", name="find")]}
 
 def test():
-    # Test the subgraphs directly to show streaming difference
-    llm = ChatOpenAI(model="gpt-4o-mini", streaming=True, temperature=0)
-    tools = []
-    subgraph = create_react_agent(llm, tools)
-    
-    initial_state = {"messages": [HumanMessage(content="Count to 20")]}
-    
-    print("BROKEN (invoke on subgraph):")
-    chunk_count = 0
-    result = subgraph.invoke(initial_state)
-    chunk_count = 1
-    print(f"Total chunks: {chunk_count}")
-    
-    print("\nFIXED (stream_mode='messages' on subgraph):")
-    chunk_count = 0  
-    for chunk in subgraph.stream(initial_state, stream_mode="messages"):
-        chunk_count += 1
-    print(f"Total chunks: {chunk_count}")
-    
+    pass
 
 
 if __name__ == "__main__":
